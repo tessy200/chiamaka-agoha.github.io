@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chiamaka Agoha — Product Manager · AI &amp; Emerging Markets</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F6F8FC;
+  --surface:#FFFFFF;
+  --surface2:#EDF1F9;
+  --border:#DDE3EF;
+  --border2:#B0BDD6;
+  --ink:#0E1B2E;
+  --muted:#4A5568;
+  --faint:#94A3B8;
+  --accent:#1A3FA8;
+  --accent2:#2B5CE6;
+  --green:#166534;
+  --amber:#C47C1A;
+  --coral:#C0394A;
+  --blue:#1A3FA8;
+  --syne:'Syne',sans-serif;
+  --serif:'Instrument Serif',serif;
+  --body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+::selection{background:#1A3FA820;color:var(--ink)}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* NOISE OVERLAY */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:0;
+  opacity:.15;
+}
+
+.container{max-width:900px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* NAV */
+nav{
+  padding:20px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--border);
+  margin-bottom:80px;
+  background:rgba(246,248,252,0.92);
+  backdrop-filter:blur(8px);
+}
+.nav-logo{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:0.22em;
+  color:var(--accent);
+  text-transform:uppercase;
+  word-spacing:0.3em;
+}
+.nav-tag{
+  font-size:12px;
+  color:var(--faint);
+  font-weight:400;
+  letter-spacing:0.05em;
+}
+
+/* HERO */
+.hero{margin-bottom:90px}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  margin-bottom:24px;
+}
+.hero-eyebrow::before{
+  content:'';
+  width:24px;height:1px;
+  background:var(--accent);
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(42px,7vw,80px);
+  line-height:1.0;
+  font-weight:400;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--accent);
+}
+.hero-sub{
+  font-size:clamp(16px,2.5vw,20px);
+  color:var(--muted);
+  font-weight:300;
+  max-width:560px;
+  margin-bottom:36px;
+  line-height:1.65;
+}
+/* VERIFIED vs ESTIMATED metric styles */
+.m-est .m-label::before{
+  content:'est. ';
+  font-size:10px;
+  color:var(--faint);
+  font-style:italic;
+  display:block;
+  margin-bottom:1px;
+}
+.m-verified{
+  position:relative;
+  border-color:#1A3FA840 !important;
+  background:linear-gradient(135deg,#D8E6F8,#B8CCF0) !important;
+  box-shadow:0 2px 12px rgba(27,94,59,0.12);
+}
+.m-verified .m-val{color:var(--accent) !important}
+.m-verified::after{
+  content:'✦ verified';
+  position:absolute;
+  top:7px;right:9px;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.06em;
+  color:#1A3FA8;
+  text-transform:uppercase;
+  opacity:0.9;
+}
+.m-delivered{
+  position:relative;
+  border-color:#1A3FA840 !important;
+  background:linear-gradient(135deg,#D8E6F8,#B8CCF0) !important;
+  box-shadow:0 2px 12px rgba(27,94,59,0.12);
+}
+.m-delivered .m-val{color:#1A3FA8 !important}
+.m-delivered::after{
+  content:'✦ delivered';
+  position:absolute;
+  top:7px;right:9px;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.06em;
+  color:#1A3FA8;
+  text-transform:uppercase;
+  opacity:0.9;
+}
+
+/* Trash4Light card glow */
+.case-card.spotlight{border-color:#1A3FA828;box-shadow:0 2px 16px rgba(26,63,168,0.07)}
+.case-card.spotlight:hover{border-color:#1A3FA850;box-shadow:0 4px 24px rgba(26,63,168,0.12)}
+.case-card.spotlight .case-title{color:var(--accent)}
+.case-card.spotlight .case-industry::after{
+  content:' · Real-World Validated';
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* BizStart capstone glow boost */
+.capstone-card.spotlight-cap{
+  border-color:#1A3FA838 !important;
+  box-shadow:0 4px 32px rgba(26,63,168,0.10);
+}
+.capstone-card.spotlight-cap::before{
+  background:radial-gradient(circle,#7B6FE830 0%,transparent 70%) !important;
+}
+
+/* Proof banner */
+.proof-banner{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  background:#EBF0FC;
+  border:1px solid #1A3FA820;
+  border-radius:10px;
+  padding:11px 14px;
+  margin-bottom:16px;
+}
+.proof-banner-cap{
+  background:#EBF0FC;
+  border-color:#1A3FA820;
+}
+.proof-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.proof-text{font-size:12px;line-height:1.5}
+.proof-text strong{font-weight:600;color:var(--ink)}
+.proof-text span{color:var(--muted)}
+
+.programme-badge{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent2);
+  border-radius:14px;
+  padding:16px 20px;
+  margin-bottom:32px;
+  max-width:600px;
+  box-shadow:0 2px 12px rgba(26,63,168,0.06);
+}
+.prog-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.prog-name{
+  font-family:var(--syne);
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:5px;
+  letter-spacing:0.01em;
+}
+.prog-sub{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}
+.pill{
+  font-size:12px;
+  font-weight:500;
+  padding:6px 14px;
+  border-radius:100px;
+  border:1px solid var(--border2);
+  color:var(--muted);
+  background:var(--surface);
+  letter-spacing:0.02em;
+}
+
+/* STAT STRIP */
+.stat-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:90px;
+  box-shadow:0 4px 24px rgba(26,63,168,0.08);
+}
+.stat-item{
+  background:var(--surface);
+  padding:24px 20px;
+  text-align:center;
+}
+.stat-val{
+  font-family:var(--syne);
+  font-size:28px;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:4px;
+  line-height:1;
+}
+.stat-label{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.4;
+}
+
+/* SECTION HEADER */
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:36px;
+}
+.section-header h2{
+  font-family:var(--syne);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  opacity:0.7;
+}
+.section-header::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+
+/* CASE CARDS */
+.cases{display:flex;flex-direction:column;gap:2px;margin-bottom:80px}
+
+.case-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:border-color 0.2s,background 0.2s,box-shadow 0.2s;
+  cursor:pointer;
+  box-shadow:0 1px 4px rgba(14,27,46,0.04);
+}
+.case-card:hover{border-color:var(--accent2);box-shadow:0 6px 28px rgba(26,63,168,0.10)}
+.case-card.open{border-color:var(--accent);background:#EEF3FC}
+
+.case-head{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:20px;
+  padding:22px 28px;
+}
+
+.case-icon{
+  width:52px;height:52px;
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  flex-shrink:0;
+}
+.icon-fintech{background:linear-gradient(135deg,#DDEAF8,#C0D4F0);border:1px solid #1A3FA818}
+.icon-clean{background:linear-gradient(135deg,#D0EDDF,#AADDC4);border:1px solid #16653418}
+.icon-health{background:linear-gradient(135deg,#FAD8DC,#F0B8C0);border:1px solid #C0394A18}
+.icon-edtech{background:linear-gradient(135deg,#DDE0F8,#C0C8F4);border:1px solid #1A3FA818}
+
+.case-meta{flex:1;min-width:0}
+.case-industry{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--faint);
+  margin-bottom:4px;
+}
+.case-title{
+  font-family:var(--syne);
+  font-size:17px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:5px;
+  line-height:1.3;
+}
+.case-desc{
+  font-size:13px;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.case-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.cbadge{
+  font-size:11px;
+  font-weight:500;
+  padding:3px 10px;
+  border-radius:100px;
+  border:1px solid;
+}
+.cb-purple{color:#1A3FA8;border-color:#1A3FA825;background:#1A3FA806}
+.cb-green{color:#1A3FA8;border-color:#1A3FA828;background:#1B5E3B08}
+.cb-blue{color:#1A3FA8;border-color:#1A3FA825;background:#1A3FA806}
+.cb-amber{color:#A06010;border-color:#A0601025;background:#A0601006}
+.cb-coral{color:#A0303E;border-color:#A0303E25;background:#A0303E06}
+
+.case-toggle{
+  width:32px;height:32px;
+  border-radius:8px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+  color:var(--muted);
+  flex-shrink:0;
+  transition:transform 0.25s,background 0.2s;
+}
+.case-card.open .case-toggle{transform:rotate(180deg);background:var(--accent);color:white;border-color:var(--accent)}
+
+.case-body{
+  display:none;
+  padding:0 28px 28px;
+  border-top:1px solid var(--border);
+  margin-top:0;
+}
+.case-card.open .case-body{display:block}
+
+/* METRICS INSIDE CARD */
+.metrics-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  padding:20px 0 24px;
+}
+.m-box{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px 12px;
+  text-align:center;
+}
+.m-val{
+  font-family:var(--syne);
+  font-size:22px;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:4px;
+  letter-spacing:-0.01em;
+}
+.m-label{font-size:11px;color:var(--muted);line-height:1.3}
+.c-purple .m-val{color:var(--accent)}
+.c-green .m-val{color:var(--accent)}
+.c-blue .m-val{color:#1A3FA8}
+.c-amber .m-val{color:#B06B10}
+.c-coral .m-val{color:#B03A40}
+
+.case-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.case-text p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.75;
+  margin-bottom:10px;
+}
+.case-text p:last-child{margin-bottom:0}
+
+.dels-title{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--faint);
+  margin-bottom:12px;
+}
+.del-list{display:flex;flex-direction:column;gap:8px}
+.del-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.del-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--accent);
+  flex-shrink:0;
+  margin-top:5px;
+}
+.del-text{font-size:12px;color:var(--muted);line-height:1.4}
+
+/* CAPSTONE */
+.capstone-wrap{margin-bottom:80px}
+.capstone-card{
+  background:linear-gradient(135deg,#FFFFFF 0%,#EDF2FC 100%);
+  border:1px solid #1A3FA825;
+  border-radius:24px;
+  padding:36px;
+  position:relative;
+  overflow:hidden;
+}
+.capstone-card::before{
+  content:'';
+  position:absolute;
+  top:-80px;right:-80px;
+  width:300px;height:300px;
+  background:radial-gradient(circle,#7B6FE820 0%,transparent 70%);
+  pointer-events:none;
+}
+.cap-header{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:20px;
+  align-items:flex-start;
+  margin-bottom:28px;
+}
+.cap-icon-big{
+  width:60px;height:60px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#1A3FA8,#2B5CE6);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+  flex-shrink:0;
+}
+.cap-name{
+  font-family:var(--syne);
+  font-size:26px;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.cap-tagline{font-size:14px;color:var(--muted)}
+.cap-sdg{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  font-weight:500;
+  color:var(--accent);
+  background:#3ECFA010;
+  border:1px solid #1A3FA815;
+  border-radius:100px;
+  padding:4px 12px;
+  margin-top:8px;
+}
+
+.cap-metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-bottom:28px;
+}
+
+.cap-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.cap-text{font-size:14px;color:var(--muted);line-height:1.75}
+.cap-checks{display:flex;flex-direction:column;gap:10px}
+.cap-check{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13px;color:var(--muted);line-height:1.5;
+}
+.check-icon{
+  width:18px;height:18px;
+  border-radius:50%;
+  background:#3ECFA015;
+  border:1px solid #3ECFA040;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-size:10px;
+  color:var(--accent);
+  margin-top:1px;
+}
+
+/* SKILLS */
+.skills-wrap{margin-bottom:80px}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.skill-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.skill-card:hover{border-color:var(--accent2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,63,168,0.10)}
+.skill-emoji{font-size:24px;margin-bottom:12px;display:block}
+.skill-name{
+  font-family:var(--syne);
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.skill-detail{font-size:12px;color:var(--muted);line-height:1.5}
+.skill-applied{font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border);letter-spacing:0.01em}
+.skill-applied::before{content:'↳ ';color:var(--accent);font-weight:600}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 0;
+  text-align:center;
+  color:var(--faint);
+  font-size:13px;
+  background:var(--surface2);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero,.stat-strip,.case-card,.capstone-card,.skill-card{
+  animation:fadeUp 0.5s ease both;
+}
+.case-card:nth-child(1){animation-delay:0.05s}
+.case-card:nth-child(2){animation-delay:0.1s}
+.case-card:nth-child(3){animation-delay:0.15s}
+.case-card:nth-child(4){animation-delay:0.2s}
+.skill-card:nth-child(1){animation-delay:0.05s}
+.skill-card:nth-child(2){animation-delay:0.1s}
+.skill-card:nth-child(3){animation-delay:0.15s}
+.skill-card:nth-child(4){animation-delay:0.2s}
+.skill-card:nth-child(5){animation-delay:0.25s}
+.skill-card:nth-child(6){animation-delay:0.3s}
+
+@media(max-width:640px){
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .metrics-row{grid-template-columns:repeat(2,1fr)}
+  .case-content{grid-template-columns:1fr}
+  .cap-metrics{grid-template-columns:repeat(2,1fr)}
+  .cap-body{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .case-head{grid-template-columns:auto 1fr auto}
+  .case-desc{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <span class="nav-logo">Chiamaka Agoha</span>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="https://www.linkedin.com/in/chiamaka-agoha-983694326" target="_blank" style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#1A3FA8'" onmouseout="this.style.color='var(--muted)'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:agohachiamaka06@gmail.com" style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='#1A3FA8'" onmouseout="this.style.color='var(--muted)'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow"><span style="font-family:var(--body);font-weight:600;letter-spacing:0.18em;font-size:13px">CHIAMAKA AGOHA</span><span style="letter-spacing:0.06em;font-weight:400;opacity:0.7"> · </span><span style="letter-spacing:0.06em;font-weight:500;color:var(--accent2)">Product Manager · AI &amp; Emerging Markets</span></div>
+    <h1>Building products<br>that <em>matter.</em></h1>
+    <p class="hero-sub">I'm drawn to products that solve real problems for underserved users — particularly across African markets. Mission-driven and AI-curious, with a focus on AI-powered products and emerging market contexts, I combine structured frameworks with user empathy to move teams from ambiguity to clarity, fast.</p>
+    <div class="programme-badge">
+      <div class="prog-icon">🎓</div>
+      <div class="prog-text">
+        <div class="prog-name">Women Techsters Fellowship &nbsp;·&nbsp; <span style="color:var(--accent)">Tech4Dev</span></div>
+        <div class="prog-sub">Technology for Social Change &amp; Development Initiative &nbsp;·&nbsp; 1-year intensive training &amp; mentorship programme. All case studies in this portfolio were executed within this programme, applying industry-standard PM tools and frameworks to real-world product scenarios.</div>
+      </div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">🗺 Product Strategy</span>
+      <span class="pill">📋 Roadmapping</span>
+      <span class="pill">🤝 Stakeholder Management</span>
+      <span class="pill">📄 PRD Writing</span>
+      <span class="pill">🔬 User Research</span>
+      <span class="pill">⚡ 0 → 1 Execution</span>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-val">5</div>
+      <div class="stat-label">Products taken from concept to demo</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">2</div>
+      <div class="stat-label">Live products accessible online right now</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">0</div>
+      <div class="stat-label">Onboarding friction points on live test</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">2–3d</div>
+      <div class="stat-label">Avg. time to deliver PRD + MVP scope</div>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <section>
+    <div class="section-header"><h2>Real-World Projects</h2></div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:600px">Products taken from concept to live, tested with real users and delivered to real deadlines.</p>
+    <div class="cases" id="real-projects">
+
+      <!-- CASE 01 — TRASH4LIGHT FEATURED -->
+      <div class="case-card spotlight" onclick="toggleCase(this)">
+        <div class="case-head">
+          <div class="case-icon icon-clean">♻️</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 01 · Cleantech / Impact &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Featured</span></div>
+            <div class="case-title">Trash4Light — Waste-to-Energy Platform, Built &amp; User-Tested</div>
+            <div class="case-desc">Full PM lifecycle · Live prototype built & user-tested · 0 friction points · OKRs defined · Pricing model designed</div>
+            <div class="case-badges">
+              <span class="cbadge cb-green">Live Demo</span>
+              <span class="cbadge cb-amber">MoSCoW · RICE · Kano</span>
+              <span class="cbadge cb-blue">User Testing</span>
+              <span class="cbadge cb-purple">PRD · Lean Canvas · BMC</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="proof-banner">
+            <div class="proof-icon">🧪</div>
+            <div class="proof-text"><strong>Real-world validated.</strong> <span>A live prototype was shared with real users for onboarding testing. Results below are directly observed — not projected.</span></div>
+          </div>
+          <div class="metrics-row c-green">
+            <div class="m-box c-green m-verified"><div class="m-val">0</div><div class="m-label">Onboarding friction points reported</div></div>
+            <div class="m-box c-green m-verified"><div class="m-val">Live</div><div class="m-label">Web app built & user-tested</div></div>
+            <div class="m-box c-green m-est"><div class="m-val">~30%</div><div class="m-label">Potential rework avoided</div></div>
+            <div class="m-box c-green"><div class="m-val">3</div><div class="m-label">PM frameworks applied</div></div>
+          </div>
+
+          <div class="case-content">
+            <div class="case-text">
+              <p><strong style="color:var(--ink);font-size:13px">The Problem</strong><br>Improper waste disposal is a major environmental challenge across Africa — recyclable materials end up in landfills, households lack rewarding recycling options, and recycling organizations struggle to secure steady sorted-waste supply.</p>
+              <p><strong style="color:var(--ink);font-size:13px">The Solution</strong><br>Trash4Light connects households and recyclers through a digital platform — offering pickup scheduling, real-time tracking, and a token-based wallet where users earn electricity vouchers for their recyclable waste. Core tagline: <em style="color:var(--accent)">"Turn your trash into light."</em></p>
+              <p><strong style="color:var(--ink);font-size:13px">My PM Work</strong><br>Led end-to-end product definition: JTBD analysis, competitor research (Wecyclers, RecyclePoints, Mr. Green Africa), 3 user personas, Value Proposition Canvas, Lean Canvas, and Business Model Canvas. Identified the product at the <em>introduction stage</em> of the lifecycle curve and designed PMF strategies to cross the chasm into early majority adoption.</p>
+            </div>
+            <div>
+              <div class="dels-title">Deliverables</div>
+              <div class="del-list">
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Full PRD — functional requirements, user stories, acceptance criteria</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">3 user personas (Busy Professional, Hustling Recycler, Eco-conscious Mother)</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Competitor analysis matrix (direct, indirect & alternative competitors)</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Product metrics framework — MRR, MAH, Token Redemption Rate, Pickup Completion Rate</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">System architecture decision — Modular Monolith with scaling strategy to 50K users</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Live web app demo with onboarding flow — user-tested with zero friction reported</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- USER PERSONAS STRIP -->
+          <div style="margin-top:20px">
+            <div class="dels-title">User Personas</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px">
+              <div class="del-item" style="flex-direction:column;gap:4px">
+                <div style="font-size:20px">👩‍💼</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink)">The Busy Professional</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.4">Wants home pickup without disrupting her work schedule</div>
+              </div>
+              <div class="del-item" style="flex-direction:column;gap:4px">
+                <div style="font-size:20px">🧑‍🎓</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink)">The Hustling Recycler</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.4">Student seeking extra income from recyclables</div>
+              </div>
+              <div class="del-item" style="flex-direction:column;gap:4px">
+                <div style="font-size:20px">👩‍👧‍👦</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink)">The Eco-conscious Mother</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.4">Teacher who wants to make recycling a family habit</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRICING MODEL STRIP -->
+          <div style="margin-top:20px">
+            <div class="dels-title">Pricing Model Defined</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+              <span style="font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:#3ECFA010;border:1px solid #1A3FA815;color:var(--accent)">Freemium (Households)</span>
+              <span style="font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:#3ECFA010;border:1px solid #1A3FA815;color:var(--accent)">SaaS Subscription (Businesses)</span>
+              <span style="font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:#3ECFA010;border:1px solid #1A3FA815;color:var(--accent)">Premium Bidding (Recyclers)</span>
+              <span style="font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:#3ECFA010;border:1px solid #1A3FA815;color:var(--accent)">One-time License (Events/Schools)</span>
+            </div>
+          </div>
+
+          <!-- Q1 OKRs -->
+          <div style="margin-top:20px">
+            <div class="dels-title">Q1 OKRs — Pre-Launch Validation Targets</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:8px">
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+                <div style="font-family:var(--syne);font-size:20px;font-weight:700;color:var(--accent)">150</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Households to onboard</div>
+              </div>
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+                <div style="font-family:var(--syne);font-size:20px;font-weight:700;color:var(--accent)">90</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Successful waste pickups</div>
+              </div>
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+                <div style="font-family:var(--syne);font-size:20px;font-weight:700;color:var(--accent)">1,800kg</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Recyclables collected</div>
+              </div>
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+                <div style="font-family:var(--syne);font-size:20px;font-weight:700;color:var(--accent)">80%</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Onboarding completion rate</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LIVE PROTOTYPE CTA -->
+          <div style="margin-top:16px;background:linear-gradient(135deg,#E0F0EA,#C4E4D4);border:1px solid #1A3FA81A;border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:4px">🔗 Live Prototype — Test It Yourself</div>
+              <div style="font-size:12px;color:var(--muted);line-height:1.5">Full MVP flow: onboarding → login → pickup scheduling → live tracking → wallet & electricity rewards</div>
+            </div>
+            <a href="https://ai.studio/apps/drive/12CJP1aESEa9y76rw_VLm4mEALwhbKxh3" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#0A0A0F;text-decoration:none;background:var(--accent);padding:9px 18px;border-radius:8px;white-space:nowrap;transition:opacity 0.2s;flex-shrink:0" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+              View Live Prototype →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BIZSTART AI — Real World -->
+      <div class="case-card" style="cursor:default;border-color:var(--accent)20" onclick="toggleCase(this)">
+        <div class="case-head">
+          <div class="case-icon" style="background:linear-gradient(135deg,#1a1535,#2a1f55);border:1px solid #1A3FA825;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">🤖</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 02 · AI / Edtech &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Capstone</span></div>
+            <div class="case-title">BizStart AI — SME Education & Business Mentorship Platform</div>
+            <div class="case-desc">0→1 group capstone · PRD, 6-week roadmap &amp; P0/P1/P2 backlog · RAG + Gemini AI · Live at bizstart-ai.vercel.app · Delivered in 3 weeks</div>
+            <div class="case-badges">
+              <span class="cbadge cb-purple">0 → 1 Execution</span>
+              <span class="cbadge cb-blue">AI Product</span>
+              <span class="cbadge cb-green">Live Product</span>
+              <span class="cbadge cb-amber">Full PM Ownership</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+      <!-- PROOF BANNER -->
+      <div class="proof-banner proof-banner-cap" style="margin-bottom:16px">
+        <div class="proof-icon">🚀</div>
+        <div class="proof-text"><strong>Live product — demo delivered on time.</strong> <span>A functional web app was built, presented to judges within a 3-week deadline, and is publicly accessible. Post-demo judge feedback is currently being incorporated into the next iteration.</span></div>
+      </div>
+
+      <!-- METRICS -->
+      <div class="metrics-row c-purple">
+        <div class="m-box c-purple m-delivered"><div class="m-val">3 wks</div><div class="m-label">Concept → live demo product</div></div>
+        <div class="m-box c-purple m-delivered"><div class="m-val">✓</div><div class="m-label">Delivered on time, no slippage</div></div>
+        <div class="m-box c-purple"><div class="m-val">6 wks</div><div class="m-label">Full roadmap span (capstone plan)</div></div>
+        <div class="m-box c-purple"><div class="m-val">10k+</div><div class="m-label">Target users (12–18 month goal)</div></div>
+      </div>
+      <div class="case-content" style="margin-bottom:20px">
+        <div class="case-text">
+          <p style="font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:10px">Served as one of two PMs on a cross-functional group capstone — a real team across product, engineering, design, data science, and cybersecurity. We built BizStart AI: an AI-powered platform that combines structured entrepreneurship education with a 24/7 AI Business Mentor, a smart business plan builder, and financial literacy tools — targeting SME owners and aspiring entrepreneurs across Africa.</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.75">The platform uses Retrieval-Augmented Generation (RAG) with a curated 100+ Q&A knowledge base and the Gemini API to deliver personalized, context-aware business advice at scale. The live product is accessible at <a href="https://bizstart-ai.vercel.app/" target="_blank" style="color:var(--accent);text-decoration:none">bizstart-ai.vercel.app</a>.</p>
+        </div>
+        <div class="cap-checks">
+          <div class="cap-check"><div class="check-icon">✓</div><span>Authored the PRD — vision, personas, MVP feature scope, functional & non-functional requirements, KPIs</span></div>
+          <div class="cap-check"><div class="check-icon">✓</div><span>Built the 6-week capstone roadmap with week-by-week deliverables, milestones, and demo goals</span></div>
+          <div class="cap-check"><div class="check-icon">✓</div><span>Prioritized the MVP product backlog (P0/P1/P2) across 6 epics and 20+ user stories</span></div>
+          <div class="cap-check"><div class="check-icon">✓</div><span>Coordinated cross-functional alignment across DevOps, frontend, backend, data science, and cybersecurity tracks</span></div>
+          <div class="cap-check"><div class="check-icon">✓</div><span>Demo presented to judges on schedule — post-demo feedback currently being implemented</span></div>
+        </div>
+      </div>
+
+      <!-- PRODUCT GOALS STRIP -->
+      <div style="margin-bottom:20px">
+        <div class="dels-title">12–18 Month Product Goals (from PRD)</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px">
+          <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+            <div style="font-family:var(--syne);font-size:18px;font-weight:700;color:var(--accent)">10,000</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Registered users</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+            <div style="font-family:var(--syne);font-size:18px;font-weight:700;color:var(--accent)">60%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Course completion rate</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+            <div style="font-family:var(--syne);font-size:18px;font-weight:700;color:var(--accent)">70%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Users completing a business plan</div>
+          </div>
+          <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px;text-align:center">
+            <div style="font-family:var(--syne);font-size:18px;font-weight:700;color:var(--accent)">+30%</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4">Business knowledge score improvement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MVP SCOPE -->
+      <div style="margin-bottom:20px">
+        <div class="dels-title">MVP Demo Scope — What We Shipped</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ User onboarding + business stage selection</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ AI Business Mentor (RAG + Gemini API)</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ Structured learning module</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ Auto-generated business plan draft</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ Financial projection tool</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:100px;background:#7B6FE810;border:1px solid #1A3FA81A;color:var(--accent)">✓ Progress dashboard</span>
+        </div>
+      </div>
+
+      <!-- LIVE PRODUCT CTA -->
+      <div style="background:linear-gradient(135deg,#EEF0FB,#DFE1F5);border:1px solid #1A3FA825;border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:4px">🔗 Live Product — Try It Now</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5">AI Business Mentor · Learning modules · Business plan builder · Financial tools</div>
+        </div>
+        <a href="https://bizstart-ai.vercel.app/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#0A0A0F;text-decoration:none;background:var(--accent2);padding:9px 18px;border-radius:8px;white-space:nowrap;transition:opacity 0.2s;flex-shrink:0" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          Visit BizStart AI →
+        </a>
+      </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- STRUCTURED CASE STUDIES -->
+  <section style="margin-bottom:80px">
+    <div class="section-header"><h2>Structured Case Studies</h2></div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:600px">End-to-end product work across fintech, healthtech, and edtech — applying industry-standard PM frameworks across the full product lifecycle.</p>
+    <div class="cases" id="structured-cases">
+      <!-- CASE 04 -->
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-head">
+          <div class="case-icon icon-edtech">🎓</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 01 · Edtech</div>
+            <div class="case-title">Navigate — L&D Platform for Measurable Skill Transformation</div>
+            <div class="case-desc">3 personas · 2 journey maps · Competitor matrix · MoSCoW + RICE + Kano · Full PRD with KPIs & acceptance criteria</div>
+            <div class="case-badges">
+              <span class="cbadge cb-blue">Market Research</span>
+              <span class="cbadge cb-amber">MoSCoW · RICE · Kano</span>
+              <span class="cbadge cb-purple">PRD Authorship</span>
+              <span class="cbadge cb-teal">Competitor Analysis</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="metrics-row c-blue">
+            <div class="m-box c-blue"><div class="m-val">3</div><div class="m-label">User personas developed</div></div>
+            <div class="m-box c-blue"><div class="m-val">2</div><div class="m-label">Customer journey maps (onboarding + day-in-life)</div></div>
+            <div class="m-box c-blue"><div class="m-val">3</div><div class="m-label">Prioritization frameworks applied</div></div>
+            <div class="m-box c-blue"><div class="m-val">2–3d</div><div class="m-label">Full PRD + MVP definition delivered</div></div>
+          </div>
+
+          <div class="case-content">
+            <div class="case-text">
+              <div class="dels-title" style="margin-bottom:8px">The Problem</div>
+              <p>Course creators and L&D managers struggle to track learner progress and prove measurable transformation. Learners lose motivation and rarely apply what they've learned. Navigate was conceived as a behavioral learning platform that bridges the gap between course completion and real-world skill application.</p>
+              <div class="dels-title" style="margin-bottom:8px;margin-top:14px">What I Did</div>
+              <p>Ran a complete discovery and definition cycle — from research through to a fully scoped PRD. Applied qualitative and quantitative research methods (interviews + surveys across 3 user types), mapped the competitive landscape against Coursera for Business, Coach.me, and Google Sheets-based trackers, and identified the key gap: no platform combines behavioral activation + social accountability + measurable transformation.</p>
+              <p>Designed 3 user personas (Course Creator, L&D Manager, Lifelong Learner) and built 2 journey maps including a detailed "Day in the Life" map for the course creator — surfacing 8 distinct pain points and opportunity areas. Authored the full PRD with functional requirements, acceptance criteria, NFRs, KPIs, assumptions, risks, and open questions for engineering.</p>
+              <p>Applied all 3 prioritization frameworks: MoSCoW to define MVP scope, RICE to score features by reach/impact/confidence/effort, and Kano to classify features by emotional engagement — concluding Kano was the best fit for a microlearning product where learner motivation and habit formation are the core retention drivers.</p>
+            </div>
+            <div>
+              <div class="dels-title">Key Artefacts Produced</div>
+              <div class="del-list" style="margin-bottom:16px">
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Market & user research plan — interview guides + survey sets for 3 user types</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Competitor matrix: Coursera for Business, Coach.me, Google Sheets trackers</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">3 user personas with goals, frustrations & behaviors</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">2 customer journey maps (onboarding flow + day-in-life)</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">MoSCoW table · RICE scoring table · Kano classification</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Full PRD — user stories, functional & non-functional requirements, acceptance criteria, KPIs, risks</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Product concept refinement with positioning statement & UX recommendations</div></div>
+              </div>
+
+              <!-- KPIs STRIP -->
+              <div class="dels-title" style="margin-bottom:8px">Target KPIs Defined</div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+                  <span style="font-size:12px;color:var(--muted)">Monthly user growth</span>
+                  <span style="font-family:var(--syne);font-size:13px;font-weight:700;color:#1A3FA8">15–20%</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+                  <span style="font-size:12px;color:var(--muted)">Course completion rate target</span>
+                  <span style="font-family:var(--syne);font-size:13px;font-weight:700;color:#1A3FA8">+30%</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+                  <span style="font-size:12px;color:var(--muted)">Active instructor rate</span>
+                  <span style="font-family:var(--syne);font-size:13px;font-weight:700;color:#1A3FA8">70%+</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px">
+                  <span style="font-size:12px;color:var(--muted)">Admin workload reduction</span>
+                  <span style="font-family:var(--syne);font-size:13px;font-weight:700;color:#1A3FA8">~40%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KANO INSIGHT -->
+          <div style="margin-top:20px;background:var(--bg);border:1px solid #5BA3F525;border-radius:12px;padding:16px 18px">
+            <div style="font-size:12px;font-weight:600;color:#1A3FA8;margin-bottom:8px">💡 PM Insight — Why Kano Won Over MoSCoW & RICE</div>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65">Microlearning success depends on emotional engagement, not just functionality. MoSCoW defined scope and RICE scored impact, but Kano identified what keeps learners coming back — distinguishing between features users expect (progress tracking), features that improve satisfaction (personalised paths, offline access), and delighters (voice assistant). For a habit-forming product, that emotional mapping is the most strategic prioritization lens.</p>
+          </div>
+        </div>
+      </div>
+      <!-- CASE 03 -->
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-head">
+          <div class="case-icon icon-health">🏥</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 02 · Healthtech</div>
+            <div class="case-title">HealthConnect — Lagos Telemedicine Platform</div>
+            <div class="case-desc">Product vision, 15+ stakeholders mapped, 3-view roadmap, compliance strategy & trade-off reasoning</div>
+            <div class="case-badges">
+              <span class="cbadge cb-coral">Stakeholder Matrix</span>
+              <span class="cbadge cb-blue">3-View Roadmap</span>
+              <span class="cbadge cb-purple">Product Vision</span>
+              <span class="cbadge cb-amber">Nigerian Compliance</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+
+          <!-- METRICS -->
+          <div class="metrics-row c-coral">
+            <div class="m-box c-coral"><div class="m-val">15+</div><div class="m-label">Stakeholders identified & mapped</div></div>
+            <div class="m-box c-coral"><div class="m-val">3</div><div class="m-label">Roadmap views — Exec, Eng, Marketing</div></div>
+            <div class="m-box c-coral"><div class="m-val">5</div><div class="m-label">Roadmap themes defined</div></div>
+            <div class="m-box c-coral"><div class="m-val">10</div><div class="m-label">Success KPIs set for Year 1</div></div>
+          </div>
+
+          <div class="case-content">
+            <div class="case-text">
+              <div class="dels-title" style="margin-bottom:8px">The Problem</div>
+              <p>Access to quality healthcare in Lagos is constrained by distance, cost, and availability of doctors. Patients face long wait times, fragmented records, and no reliable way to access licensed specialists remotely. HealthConnect was designed to bridge that gap — connecting patients with verified doctors anytime, anywhere through secure digital consultations, e-prescriptions, and integrated pharmacy delivery.</p>
+
+              <div class="dels-title" style="margin-bottom:8px;margin-top:14px">Product Vision</div>
+              <p style="font-style:italic;color:var(--ink);font-size:13px;border-left:3px solid var(--coral);padding-left:12px;line-height:1.6">"Make quality healthcare accessible and affordable to every Lagosian by connecting patients with licensed medical professionals anytime, anywhere through secure digital consultations and integrated care services."</p>
+
+              <div class="dels-title" style="margin-bottom:8px;margin-top:14px">What I Did</div>
+              <p>Defined the product vision, set 3 strategic objectives and 10 measurable Year 1 success metrics — covering onboarding UX (under 3 mins), patient satisfaction (80%+), doctor response time (under 5 mins), regulatory compliance (100% NDPA + NITDA), and scale (200 doctors + 10,000 patients within 12 months).</p>
+              <p>Mapped 15+ stakeholders across 6 categories (internal team, leadership, external partners, end users, regulators, service providers) and placed each into a 4-quadrant influence/interest matrix. Built a detailed engagement plan — specifying communication frequency, channel, key information, and risk if mismanaged — for every high-priority group.</p>
+              <p>Surfaced a nuanced stakeholder debate: are doctors and pharmacy partners end users or service providers? Argued that both are true — they experience the platform directly and benefit from it, making their usability needs as important as patients'. This insight was used to justify dual-persona treatment in the roadmap.</p>
+              <p>Produced 3 audience-specific roadmap views from the same 5 themes, ensuring each team saw the version most relevant to their decision-making — without losing strategic coherence.</p>
+            </div>
+
+            <div>
+              <!-- STAKEHOLDER MATRIX -->
+              <div class="dels-title" style="margin-bottom:10px">4-Quadrant Stakeholder Matrix</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:16px">
+                <div style="background:linear-gradient(135deg,#F8EEEE,#EDD8D8);border:1px solid #FF6B6B30;border-radius:10px;padding:12px">
+                  <div style="font-size:10px;font-weight:700;color:#B03A40;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">🔴 Manage Closely</div>
+                  <div style="font-size:12px;color:var(--muted);line-height:1.7">Product Manager<br>Chief Medical Officer<br>CEO / Founder</div>
+                </div>
+                <div style="background:linear-gradient(135deg,#E0F0EA,#C4E4D4);border:1px solid #1A3FA81A;border-radius:10px;padding:12px">
+                  <div style="font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">🟡 Keep Satisfied</div>
+                  <div style="font-size:12px;color:var(--muted);line-height:1.7">Finance Director<br>NDPC (Regulator)</div>
+                </div>
+                <div style="background:linear-gradient(135deg,#E0EAF8,#C4D8EE);border:1px solid #5BA3F530;border-radius:10px;padding:12px">
+                  <div style="font-size:10px;font-weight:700;color:#1A3FA8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">🔵 Keep Informed</div>
+                  <div style="font-size:12px;color:var(--muted);line-height:1.7">Eng Team Lead<br>Marketing Manager<br>IT Security · Customer Support</div>
+                </div>
+                <div style="background:linear-gradient(135deg,#F5EEDC,#EAD8B4);border:1px solid #F5A62330;border-radius:10px;padding:12px">
+                  <div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">⚪ Monitor</div>
+                  <div style="font-size:12px;color:var(--muted);line-height:1.7">Patients · Doctors<br>Pharmacy Partners<br>Insurance · Payment Platforms</div>
+                </div>
+              </div>
+
+              <div class="dels-title">Key Artefacts Produced</div>
+              <div class="del-list">
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Product vision statement + 3 strategic objectives</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">10 Year-1 success KPIs with measurable targets</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">15+ stakeholder mapping across 6 categories</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">4-quadrant influence/interest matrix</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Engagement plan — frequency, channel, risk per stakeholder</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Theme-based roadmap (5 themes across Now/Q1/Q2)</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">3 audience-specific roadmap views (Exec · Eng · Marketing)</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROADMAP THEMES -->
+          <div style="margin-top:20px">
+            <div class="dels-title" style="margin-bottom:10px">5 Roadmap Themes & Expected Outcomes</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">📅 Flexibility — Self-booking + doctor availability display</div>
+                  <div style="font-size:11px;color:var(--muted);margin-top:2px">Reduce doctors' idle time · Increase appointment volume</div>
+                </div>
+                <span style="font-size:11px;font-weight:600;color:#B03A40;white-space:nowrap">↓45% idle time</span>
+              </div>
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">📱 Accessibility & Ease of Use — Media uploads + instant consultation</div>
+                  <div style="font-size:11px;color:var(--muted);margin-top:2px">Mobile-first, reduce friction for patients in the field</div>
+                </div>
+                <span style="font-size:11px;font-weight:600;color:#B03A40;white-space:nowrap">↓20% churn</span>
+              </div>
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">✅ Healthcare Quality — Doctor & pharmacy verification + ratings</div>
+                  <div style="font-size:11px;color:var(--muted);margin-top:2px">Build platform credibility and patient trust</div>
+                </div>
+                <span style="font-size:11px;font-weight:600;color:#B03A40;white-space:nowrap">+30% registrations</span>
+              </div>
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">⚙️ Operational Efficiency — AI-assisted diagnosis + automated billing</div>
+                  <div style="font-size:11px;color:var(--muted);margin-top:2px">Free up doctors for complex cases, reduce support costs</div>
+                </div>
+                <span style="font-size:11px;font-weight:600;color:#B03A40;white-space:nowrap">↓25% support cost</span>
+              </div>
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center">
+                <div>
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">🔒 Regulatory Compliance — NDPA + NITDA + MDCN verification</div>
+                  <div style="font-size:11px;color:var(--muted);margin-top:2px">Zero penalties, trusted brand, data encryption per sprint</div>
+                </div>
+                <span style="font-size:11px;font-weight:600;color:#B03A40;white-space:nowrap">100% compliance</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PM INSIGHT -->
+          <div style="margin-top:16px;background:var(--bg);border:1px solid #FF6B6B25;border-radius:12px;padding:16px 18px">
+            <div style="font-size:12px;font-weight:600;color:#B03A40;margin-bottom:8px">💡 PM Insight — Trade-offs & Stakeholder Conflict</div>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:8px"><strong style="color:var(--ink)">Trade-off made:</strong> Prioritised appointment booking and doctor verification over wellness tips and social features. Also chose to automate initial diagnostic assistance rather than requiring direct doctor involvement — freeing doctors for complex cases while reducing response time. Top stakeholder-preferred features were pushed to future releases to protect MVP scope.</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65"><strong style="color:var(--ink)">Conflict anticipated:</strong> The Founder's product vision and the Chief Medical Officer's clinical perspective are likely to diverge — especially on AI-assisted diagnosis vs. human-only consultation. Resolution approach: acknowledge both priorities, evaluate against roadmap objectives, offer alternatives, and defer contested features to a post-MVP release with supporting data from initial user behaviour.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 03 — SAVEUP -->
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-head">
+          <div class="case-icon icon-fintech">💳</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 03 · Fintech</div>
+            <div class="case-title">SaveUp — Gen Z Mobile Savings App</div>
+            <div class="case-desc">90-day roadmap · 6-sprint plan · 5 RICE-scored features · Executive pushback handled · Compliance-first MVP</div>
+            <div class="case-badges">
+              <span class="cbadge cb-purple">Sprint Roadmapping</span>
+              <span class="cbadge cb-blue">Stakeholder Alignment</span>
+              <span class="cbadge cb-green">RICE Prioritization</span>
+              <span class="cbadge cb-amber">Fintech Compliance</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+          <!-- METRICS -->
+          <div class="metrics-row c-purple">
+            <div class="m-box c-purple"><div class="m-val">90d</div><div class="m-label">Hard launch deadline — 6 sprints planned</div></div>
+            <div class="m-box c-purple"><div class="m-val">5</div><div class="m-label">MVP features scoped & RICE-scored</div></div>
+            <div class="m-box c-purple"><div class="m-val">4</div><div class="m-label">Stakeholder groups aligned (CEO, Eng, Legal, Mktg)</div></div>
+            <div class="m-box c-purple"><div class="m-val">500+</div><div class="m-label">Target active users within 30 days of launch</div></div>
+          </div>
+
+          <div class="case-content">
+            <div class="case-text">
+              <div class="dels-title" style="margin-bottom:8px">The Problem</div>
+              <p>Gen Z users aged 18–25 are digital natives entering financial independence without the tools or habits to save. Traditional fintech is too complex, too clinical, and too slow to trust. SaveUp was designed to make saving effortless, automatic, and rewarding — with a vision to make saving a way of life, not a struggle.</p>
+
+              <div class="dels-title" style="margin-bottom:8px;margin-top:14px">What I Did</div>
+              <p>Defined the MVP scope against hard constraints: a 90-day deadline, engineering bandwidth capped at 3–4 features, a budget ceiling of 5 features, and mandatory compliance requirements. Used RICE scoring to evaluate every feature against value, stakeholder input, customer feedback, and legal needs — arriving at the 5 that would prove the core value proposition without overbuilding.</p>
+              <p>Structured a 6-sprint, 3-phase delivery plan: Phase 1 (Foundation — security + core savings logic), Phase 2 (Core Value — cash-out + analytics), Phase 3 (Launch Prep — testing, penetration test, app store submission). Each sprint had a focused goal, preventing scope drift and protecting quality.</p>
+              <p>Built a stakeholder alignment plan to secure unified approval across CEO, Engineering, Marketing, and Compliance — each with different priorities. Addressed executive pushback directly with structured rebuttals: CEO wanted uniqueness (→ Savings Interest Boost as differentiator), Engineering flagged scope (→ sprint dedicated to testing), Legal required compliance (→ Basic Security + Instant Cash-out locked as non-negotiable).</p>
+
+              <!-- USER TARGET -->
+              <div style="margin-top:14px;background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px 14px">
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px">🎯 Target User</div>
+                <p style="font-size:13px;color:var(--muted);line-height:1.6;margin:0">21-year-old college student or recent graduate. Digital native, variable income, overwhelmed by traditional finance tools. Values authenticity, transparency, and immediate utility.</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="dels-title">5 MVP Features — RICE Scored</div>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-size:12px;font-weight:600;color:var(--ink)">🔐 Basic Security (2FA + Biometrics)</div>
+                    <div style="font-size:11px;color:var(--faint);margin-top:2px">Compliance-mandatory · Builds trust</div>
+                  </div>
+                  <span style="font-family:var(--syne);font-size:14px;font-weight:700;color:var(--accent)">300</span>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-size:12px;font-weight:600;color:var(--ink)">🔄 Auto-Save Rules (Round-ups)</div>
+                    <div style="font-size:11px;color:var(--faint);margin-top:2px">65% of testers rated most valuable</div>
+                  </div>
+                  <span style="font-family:var(--syne);font-size:14px;font-weight:700;color:var(--accent)">175</span>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-size:12px;font-weight:600;color:var(--ink)">⚡ Instant Cash-out</div>
+                    <div style="font-size:11px;color:var(--faint);margin-top:2px">47% said trust depends on this feature</div>
+                  </div>
+                  <span style="font-family:var(--syne);font-size:14px;font-weight:700;color:var(--accent)">141</span>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-size:12px;font-weight:600;color:var(--ink)">📊 Basic Analytics Dashboard</div>
+                    <div style="font-size:11px;color:var(--faint);margin-top:2px">52% of users requested spending visibility</div>
+                  </div>
+                  <span style="font-family:var(--syne);font-size:14px;font-weight:700;color:var(--accent)">83</span>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-size:12px;font-weight:600;color:var(--ink)">💰 Savings Interest Boost</div>
+                    <div style="font-size:11px;color:var(--faint);margin-top:2px">Key differentiator — real monetary reward for consistency</div>
+                  </div>
+                  <span style="font-family:var(--syne);font-size:14px;font-weight:700;color:var(--accent)">24</span>
+                </div>
+              </div>
+
+              <div class="dels-title">Key Artefacts Produced</div>
+              <div class="del-list">
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Product overview — user definition, pain points & MVP rationale</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">RICE feature scoring across 5 MVP features</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">6-sprint, 3-phase 90-day delivery plan</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Stakeholder alignment strategy — 4 groups, tailored per priority</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Executive pushback rebuttals (CEO, Engineering, Legal)</div></div>
+                <div class="del-item"><div class="del-dot"></div><div class="del-text">Compliance & legal milestone checklist</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPRINT TIMELINE -->
+          <div style="margin-top:20px">
+            <div class="dels-title" style="margin-bottom:10px">90-Day Sprint Plan</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px">
+                <div style="font-family:var(--syne);font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Phase 1 · Sprints 1–2</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px">Foundation</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.5">Core infrastructure, security (2FA + biometrics), bank linking, auto-save logic</div>
+              </div>
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px">
+                <div style="font-family:var(--syne);font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Phase 2 · Sprints 3–4</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px">Core Value</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.5">Instant cash-out, analytics dashboard, full feature integration</div>
+              </div>
+              <div style="background:var(--bg);border:1px solid #1A3FA815;border-radius:10px;padding:12px">
+                <div style="font-family:var(--syne);font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.06em">Phase 3 · Sprints 5–6</div>
+                <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px">Launch Prep</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.5">Security pen test, bug fixing, app store submission, go/no-go decision</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PM INSIGHT -->
+          <div style="margin-top:16px;background:var(--bg);border:1px solid #1A3FA815;border-radius:12px;padding:16px 18px">
+            <div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:8px">💡 PM Insight — Handling Executive Pushback</div>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65">When wearing both PM and Project Manager hats, the hardest job is defending scope under pressure. For SaveUp, the reframe was: we are trading a larger feature set for a secure, on-time launch that proves our core value proposition. Locking compliance features as non-negotiable, dedicating a full sprint to testing, and positioning the Interest Boost as the WOW differentiator meant every stakeholder got their core priority without blowing scope or the deadline.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+      <!-- SKILLS -->
+  <section class="skills-wrap">
+    <div class="section-header"><h2>Core PM Competencies</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="skill-emoji">🗺</span>
+        <div class="skill-name">Product Roadmapping</div>
+        <div class="skill-detail">Now/Next/Later & quarterly roadmaps, multi-stakeholder views, milestone tracking</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">SaveUp, HealthConnect, BizStart AI</span></div>
+        <div class="skill-applied">Applied in: SaveUp · HealthConnect · BizStart AI</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-emoji">📄</span>
+        <div class="skill-name">PRD Writing</div>
+        <div class="skill-detail">User stories, acceptance criteria, feature specs tied to clear business goals</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">Trash4Light, Navigate, BizStart AI</span></div>
+        <div class="skill-applied">Applied in: Trash4Light · Navigate · BizStart AI</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-emoji">🎯</span>
+        <div class="skill-name">Prioritization</div>
+        <div class="skill-detail">MoSCoW, RICE scoring, Kano model, backlog grooming, trade-off decisions</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">SaveUp, Navigate, Trash4Light</span></div>
+        <div class="skill-applied">Applied in: Trash4Light · Navigate · SaveUp · BizStart AI</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-emoji">👥</span>
+        <div class="skill-name">User Research</div>
+        <div class="skill-detail">Personas, journey maps, JTBD analysis, usability testing, insight synthesis</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">Trash4Light, Navigate, HealthConnect</span></div>
+        <div class="skill-applied">Applied in: Trash4Light · Navigate · HealthConnect</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-emoji">🤝</span>
+        <div class="skill-name">Stakeholder Management</div>
+        <div class="skill-detail">Influence-interest matrix, engagement plans, conflict resolution, multi-team alignment</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">HealthConnect, SaveUp, BizStart AI</span></div>
+        <div class="skill-applied">Applied in: HealthConnect · SaveUp · BizStart AI</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-emoji">⚙️</span>
+        <div class="skill-name">Technical PM</div>
+        <div class="skill-detail">System design, data modeling, database decisions, scaling strategy, Git workflow</div>
+        <div style="font-size:11px;color:var(--faint);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">Applied in: <span style="color:var(--accent);font-weight:500">Trash4Light, BizStart AI</span></div>
+        <div class="skill-applied">Applied in: Trash4Light · BizStart AI</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="font-family:var(--body);font-size:15px;font-weight:600;color:var(--ink);letter-spacing:0.2em;text-transform:uppercase;word-spacing:0.25em;margin-bottom:12px">Chiamaka Agoha</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap">
+      <a href="https://www.linkedin.com/in/chiamaka-agoha-983694326" target="_blank" style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border2);padding:8px 16px;border-radius:100px;transition:all 0.2s" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent2)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--muted)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:agohachiamaka06@gmail.com" style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--border2);padding:8px 16px;border-radius:100px;transition:all 0.2s" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent2)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--muted)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        agohachiamaka06@gmail.com
+      </a>
+    </div>
+    <p style="font-size:12px;color:var(--faint)">Product Manager · AI &amp; Emerging Markets</p>
+  </footer>
+</div>
+
+<script>
+function toggleCase(el){
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.case-card').forEach(function(c){c.classList.remove('open')});
+  if(!isOpen) el.classList.add('open');
+}
+</script>
+</body>
+</html>
