@@ -652,11 +652,11 @@ footer{
   <!-- STAT STRIP -->
   <div class="stat-strip">
     <div class="stat-item">
-      <div class="stat-val">5</div>
-      <div class="stat-label">Products taken from concept to demo</div>
+      <div class="stat-val">6</div>
+      <div class="stat-label">Products taken from concept to launch</div>
     </div>
     <div class="stat-item">
-      <div class="stat-val">2</div>
+      <div class="stat-val">3</div>
       <div class="stat-label">Live products accessible online right now</div>
     </div>
     <div class="stat-item">
@@ -675,12 +675,141 @@ footer{
     <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:600px">Products taken from concept to live, tested with real users and delivered to real deadlines.</p>
     <div class="cases" id="real-projects">
 
-      <!-- CASE 01 — TRASH4LIGHT FEATURED -->
+      <!-- CASE 01 — CAKEWISE FEATURED -->
+      <div class="case-card spotlight" onclick="toggleCase(this)" style="border-color:#C47C1A25">
+        <div class="case-head">
+          <div class="case-icon" style="background:linear-gradient(135deg,#FBF0DC,#F5D99A);border:1px solid #C47C1A25;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">🎂</div>
+          <div class="case-meta">
+            <div class="case-industry">Case 01 · FoodTech / BakeryTech &nbsp;·&nbsp; <span style="color:var(--amber);font-weight:700">★ Featured · Solo-Built</span></div>
+            <div class="case-title" style="color:var(--amber)">CakeWise — AI-Powered Cake Pricing Assistant</div>
+            <div class="case-desc">Full product lifecycle: discovery → validation → pricing engine → AI integration → freemium model → live MVP</div>
+            <div class="case-badges">
+              <span class="cbadge cb-amber">AI Product</span>
+              <span class="cbadge cb-green">Live MVP</span>
+              <span class="cbadge cb-blue">0→1 Solo Build</span>
+              <span class="cbadge cb-purple">FoodTech</span>
+            </div>
+          </div>
+          <div class="case-toggle">▾</div>
+        </div>
+        <div class="case-body">
+
+          <!-- PROOF BANNER -->
+          <div class="proof-banner" style="background:#FBF4E8;border:1px solid #C47C1A25;margin-bottom:16px">
+            <div class="proof-icon">🧪</div>
+            <div class="proof-text"><strong>Validated, built & shipped solo.</strong> <span>Started with a real problem observed in baking communities. Surveyed 10 bakers from a 600+ member community before writing a single line of product requirements. The live MVP is accessible now.</span></div>
+          </div>
+
+          <!-- METRICS -->
+          <div class="metrics-row">
+            <div class="m-box m-verified" style="border-color:#C47C1A40 !important;background:linear-gradient(135deg,#FBF4E8,#F5E4C0) !important">
+              <div class="m-val" style="color:#9B6218">10</div>
+              <div class="m-label">Bakers surveyed pre-build</div>
+            </div>
+            <div class="m-box m-verified" style="border-color:#C47C1A40 !important;background:linear-gradient(135deg,#FBF4E8,#F5E4C0) !important">
+              <div class="m-val" style="color:#9B6218">600+</div>
+              <div class="m-label">Baker community used for validation</div>
+            </div>
+            <div class="m-box" style="background:var(--surface2);border:1px solid var(--border)">
+              <div class="m-val" style="color:var(--accent)">4</div>
+              <div class="m-label">Pricing plans (Free, Weekly, Monthly, Premium)</div>
+            </div>
+            <div class="m-box" style="background:var(--surface2);border:1px solid var(--border)">
+              <div class="m-val" style="color:var(--accent)">Live</div>
+              <div class="m-label">MVP shipped with Paystack integration</div>
+            </div>
+          </div>
+
+          <!-- PROBLEM -->
+          <div style="margin-bottom:16px">
+            <div class="dels-title">The Problem</div>
+            <p style="font-size:14px;color:var(--muted);line-height:1.75;margin-top:8px">Bakers — especially beginners and growing bakers — struggle to price cakes quickly and profitably. Pricing a cake involves ingredients, size, layers, tiers, design, labour, packaging, overhead, and local market conditions. Without a structured tool, bakers underprice, respond too slowly, and sometimes make little or no profit on a completed order. The deeper problem wasn't just <em>"what is the price?"</em> — it was <em>"how do I arrive at a price I can defend and still make money?"</em></p>
+          </div>
+
+          <div class="case-content">
+            <div class="case-text">
+              <div class="dels-title" style="margin-bottom:8px">What I did as PM</div>
+              <p>Identified the problem from repeated behaviour in baking communities — bakers posting cake photos asking "how much should I charge?" Validated the pain point by surveying 10 bakers from a 600+ member community <em>before</em> committing to any development.</p>
+              <p>Designed the full pricing engine from scratch — modelling ingredient costs (flour ₦1,900/1.5kg, labour ₦5,000–10,000/tier), calibrating against real Nigerian market benchmarks, and building in a critical distinction between layers vs. tiers that the AI initially got wrong.</p>
+              <p>Introduced two input modes: AI-assisted (upload a cake image → AI analysis → pricing) and manual entry — keeping the product functional even when AI availability is limited. Added a Reality Check Engine to provide profit visibility and market-adjusted estimates, shifting the product from "price calculator" to "smart pricing assistant."</p>
+              <p>Designed a freemium SaaS model with Naira-based payments via Paystack — Free (3 scans then 2/day), Weekly ₦500, Monthly ₦2,000, Premium ₦5,000 (unlimited). Built pricing tiers around a core principle: let users experience value before asking them to pay, while managing AI usage costs.</p>
+
+              <!-- KEY DECISIONS -->
+              <div style="margin-top:16px;background:var(--bg);border:1px solid #C47C1A22;border-left:3px solid var(--amber);border-radius:10px;padding:14px 16px">
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-bottom:10px">💡 Key Product Decisions</div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <div style="font-size:13px;color:var(--muted);line-height:1.5">✦ <strong style="color:var(--ink)">Validate before build</strong> — surveyed bakers before committing to development</div>
+                  <div style="font-size:13px;color:var(--muted);line-height:1.5">✦ <strong style="color:var(--ink)">Built around existing behaviour</strong> — bakers already shared cake images when asking for price help; image upload was a natural entry point</div>
+                  <div style="font-size:13px;color:var(--muted);line-height:1.5">✦ <strong style="color:var(--ink)">AI as assistant, not the product</strong> — manual pricing kept functional as fallback when AI fails</div>
+                  <div style="font-size:13px;color:var(--muted);line-height:1.5">✦ <strong style="color:var(--ink)">Price ranges, not one fixed price</strong> — Average, Standard & Premium tiers reflect real baker decision-making</div>
+                  <div style="font-size:13px;color:var(--muted);line-height:1.5">✦ <strong style="color:var(--ink)">Naira-first payments</strong> — payment infrastructure matched actual Nigerian market behaviour</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="dels-title">Key Artefacts & Contributions</div>
+              <div class="del-list" style="margin-bottom:16px">
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Validation survey — 10 responses from 600+ baker community</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Product requirements & pricing engine design</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">AI-assisted + manual input dual-path architecture</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Reality Check Engine (profit visibility + market adjustment)</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Freemium SaaS model: Free, Weekly, Monthly, Premium</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Paystack integration for Naira-based payments</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Iterative testing, regression identification & engine fix</div></div>
+                <div class="del-item"><div class="del-dot" style="background:var(--amber)"></div><div class="del-text">Analytics funnel defined (acquisition → activation → monetization)</div></div>
+              </div>
+
+              <!-- PRICING TIERS -->
+              <div class="dels-title" style="margin-bottom:10px">Pricing Model</div>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">Free</div>
+                  <div style="font-size:11px;color:var(--muted)">3 scans then 2/day (resets midnight)</div>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">Weekly &nbsp;<span style="color:var(--amber);font-weight:700">₦500</span></div>
+                  <div style="font-size:11px;color:var(--muted)">5 scans/day on 3 active days</div>
+                </div>
+                <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:12px;font-weight:600;color:var(--ink)">Monthly &nbsp;<span style="color:var(--amber);font-weight:700">₦2,000</span></div>
+                  <div style="font-size:11px;color:var(--muted)">5 scans/day every day</div>
+                </div>
+                <div style="background:linear-gradient(135deg,#FBF4E8,#F5E4C0);border:1px solid #C47C1A30;border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:12px;font-weight:600;color:#9B6218">Premium &nbsp;<span style="font-weight:700">₦5,000</span></div>
+                  <div style="font-size:11px;color:#9B6218">Unlimited AI scans, no daily limit</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PM INSIGHT -->
+          <div style="margin-top:16px;background:var(--bg);border:1px solid #C47C1A22;border-radius:12px;padding:16px 18px">
+            <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:8px">💡 Biggest PM Lesson</div>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:8px">The layers vs. tiers bug was the most revealing moment. The AI was treating multiple layers as multiple tiers — doubling the price recommendation incorrectly. Fixing it wasn't just a technical issue; it was a trust issue. If a baker got a wildly inflated price on their first scan, they'd never return. <strong style="color:var(--ink)">AI outputs must be treated as probabilistic inputs that require domain validation, not blind acceptance.</strong></p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.65">A second lesson: adding the AI workflow caused manual pricing to silently break. Every new feature can create regressions elsewhere. Shipping is not the end of product development — it's where measurement begins.</p>
+          </div>
+
+          <!-- LIVE PRODUCT CTA -->
+          <div style="margin-top:16px;background:linear-gradient(135deg,#FBF4E8,#F5E0A8);border:1px solid #C47C1A35;border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:12px;font-weight:600;color:#9B6218;margin-bottom:4px">🔗 Live Product — Try It Now</div>
+              <div style="font-size:12px;color:#9B6218;opacity:0.8;line-height:1.5">AI image analysis · Manual pricing · Profit visibility · Paystack payments</div>
+            </div>
+            <a href="https://cakewise-app.onrender.com" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#FFFFFF;text-decoration:none;background:#C47C1A;padding:9px 18px;border-radius:8px;white-space:nowrap;transition:opacity 0.2s;flex-shrink:0" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+              Visit CakeWise →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CASE 02 — TRASH4LIGHT -->
       <div class="case-card spotlight" onclick="toggleCase(this)">
         <div class="case-head">
           <div class="case-icon icon-clean">♻️</div>
           <div class="case-meta">
-            <div class="case-industry">Case 01 · Cleantech / Impact &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Featured</span></div>
+            <div class="case-industry">Case 02 · Cleantech / Impact &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Real-World Validated</span></div>
             <div class="case-title">Trash4Light — Waste-to-Energy Platform, Built &amp; User-Tested</div>
             <div class="case-desc">Full PM lifecycle · Live prototype built & user-tested · 0 friction points · OKRs defined · Pricing model designed</div>
             <div class="case-badges">
@@ -798,7 +927,7 @@ footer{
         <div class="case-head">
           <div class="case-icon" style="background:linear-gradient(135deg,#1a1535,#2a1f55);border:1px solid #1A3FA825;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">🤖</div>
           <div class="case-meta">
-            <div class="case-industry">Case 02 · AI / Edtech &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Capstone</span></div>
+            <div class="case-industry">Case 03 · AI / Edtech &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:700">★ Capstone</span></div>
             <div class="case-title">BizStart AI — SME Education & Business Mentorship Platform</div>
             <div class="case-desc">0→1 group capstone · PRD, 6-week roadmap &amp; P0/P1/P2 backlog · RAG + Gemini AI · Live at bizstart-ai.vercel.app · Delivered in 3 weeks</div>
             <div class="case-badges">
@@ -892,6 +1021,7 @@ footer{
 
     </div>
   </section>
+
 
   <!-- STRUCTURED CASE STUDIES -->
   <section style="margin-bottom:80px">
